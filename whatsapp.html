@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: rgb(8, 20, 13);
+    }
+
+    .container {
+        /* border: 2px solid red; */
+        margin: 40px 20px;
+        /* height: 100vh; */
+        display: flex;
+        /* width: 100%; */
+        /* flex-direction: row; */
+        /* align-items: center; */
+        /* justify-content: space-between; */
+    }
+
+    .main {
+        /* border: 2px solid blue; */
+        /* height: 90vh; */
+        width: 50%;
+        max-width: 400px;
+        /* display: flex; */
+        /* align-items: center; */
+        /* justify-content: space-around; */
+    }
+
+    .navber {
+        /* border: 3px solid green; */
+        /* width: 50%; */
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(60, 63, 60);
+        color: aliceblue;
+        align-items: center;
+    }
+
+    #image {
+        color: rgb(15, 170, 108);
+        margin: 0.5rem 0.5rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        /* border: 2px solid red; */
+    }
+
+    .menu {
+        /* border: 2px solid pink; */
+        width: 50%;
+        /* padding: 2px; */
+        display: flex;
+        justify-content: space-evenly;
+        /* align-items: center; */
+    }
+
+    .menu i {
+        cursor: pointer;
+
+    }
+
+    .box {
+        background-color: rgb(19, 26, 22);
+        /* height: 90vh; */
+        /* border: 2px solid yellow; */
+    }
+
+    .search {
+        /* border: 2px solid red; */
+        /* height: 10vh; */
+        display: flex;
+        align-items: center;
+        /* justify-content: space-evenly; */
+        /* background-color: rgb(25, 40, 25); */
+        /* color: aliceblue; */
+        padding-right: 6px;
+    }
+
+    .chat {
+        /* border: 2px solid blue; */
+        background-color: rgb(60, 63, 60);
+        padding: 8px;
+        margin: 10px;
+        border-radius: 8px;
+        width: 90%;
+        /* height: 20px; */
+        color: aliceblue;
+
+    }
+
+    .chat i {
+        cursor: pointer;
+    }
+
+    .chat input {
+        border: none;
+        /* border: 2px solid red; */
+        padding-left: 20px;
+        background-color: transparent;
+    }
+
+    ::placeholder {
+        color: white;
+    }
+
+    .icon {
+        /* border: 2px solid paleturquoise; */
+        display: flex;
+        /* justify-content:space-around; */
+        align-items: center;
+        color: aliceblue;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    }
+
+    .icon i {
+        margin: 10px 15px;
+        color: green;
+    }
+
+    .list {
+        /* border: 2px solid rgb(205, 24, 24); */
+        /* width: 300px; */
+        height: 700px;
+        /* margin: 50px 20px; */
+        overflow: auto;
+        /* scroll-snap-type: y mandatory; */
+    }
+
+    .list::-webkit-scrollbar {
+        width: 10px;
+        /* background-color: green; */
+    }
+
+    .list::-webkit-scrollbar-track {
+
+        border-radius: 20px;
+        background-color: rgb(100, 101, 98);
+    }
+
+    .list::-webkit-scrollbar-thumb {
+        background-color: rgb(20, 20, 21);
+        border-radius: 20px;
+    }
+
+
+    .item {
+        /* border: 2px solid black; */
+        /* height: 30px; */
+        display: flex;
+        justify-content: space-;
+        align-items: center;
+        color: aliceblue;
+        font-size: 2rem;
+        padding: 10px;
+        /* background-color: aquamarine; */
+    }
+
+    .list :hover {
+        background-color: rgb(60, 63, 60);
+
+    }
+
+    .item h5 {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+
+    .bio {
+        /* border: 2px solid black; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        /* height: 650px; */
+        /* max-width: 1500px; */
+        background-color: rgba(60, 63, 60);
+    }
+
+    .content {
+        /* border: 2px solid red; */
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        font-size: 2rem;
+    }
+
+    .content i {
+        position: relative;
+        bottom: 10%;
+        color: greenyellow;
+    }
+
+    .text {
+        /* border: 2px solid greenyellow; */
+        text-align: center;
+        color: aliceblue;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .text p {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    button {
+        background-color: rgb(18, 180, 142);
+
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <nav class="navber">
+                <div id="image">
+                    <i class="fa-solid fa-circle-user"></i>
+                </div>
+                <div class="menu">
+                    <i class="fa-solid fa-users"></i>
+                    <i class="fa-brands fa-staylinked"></i>
+                    <i class="fa-regular fa-comment-dots"></i>
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </nav>
+            <div class="box">
+                <div class="search">
+                    <div class="chat">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Search or start new chat">
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="icon">
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                    <h5>Archived</h5>
+                </div>
+                <div class="list">
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <h5>piyali</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bio">
+            <div class="content">
+                <img src="./christian-wiediger-5BG-9id-A6I-unsplash.jpg" alt="" width="200px">
+                <i class="fa-brands fa-square-whatsapp"></i>
+            </div>
+            <div class="text">
+                <h2>Download WhatsApp for Windows</h2>
+                <p>Make cells,share your screen and get a faster experience when you download the Windows app.</p>
+            </div>
+            <button>Get form Microsoft store</button>
+        </div>
+
+    </div>
+</body>
+
+</html>
